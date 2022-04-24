@@ -1,0 +1,46 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+<div class="container">
+    <h2 class="mb-3 align-items-center">Novo cadastro</h2>
+    <div class="card bg-light">
+        <div class="card-body">
+            <form action="/admin/cadeiras/novo" method="POST">
+    
+               <div class="container">
+                   <div class="row">
+                       <div class="col-12 mb-3">
+                           <label for="nome" class="mb-2">Nome: </label>
+                            <input type="text" name="nome" id="nome" placeholder="Nome da cadeira" class="form-control" value="{{cadeira.nome}}">
+                    </div>
+                       <div class="col-6 mb-3">
+                            <label for="teste1" class="mb-2">Primeira Avaliação:</label>
+                            <input type="text" name="teste1" id="teste1" placeholder="Nota primeira avaliação" class="form-control" value="{{cadeira.teste1}}">
+                        </div>
+    
+                        <div class="col-6 mb-3">
+                            <label for="teste2" class="mb-2">Segunda avaliação: </label>
+                            <input type="text" name="teste2" id="teste2" placeholder="Nota da segunda avaliação" class="form-control" value="{{cadeira.teste2}}">
+                        </div>
+    
+                        <div class="col-6 mb-3">
+    
+                            <label for="trabalho1" class="mb-2">Primeiro Trabalho: </label>
+                            <input type="text" name="trabalho1" id="trabalho1" placeholder="Nota do primeiro trabalho" class="form-control" value="{{cadeira.trabalho1}}">
+    
+                        </div>
+    
+                        <div class="col-6 mb-3">
+                            <label for="trabalho2" class="mb-2">Segundo Trabalho: </label>
+                            <input type="text" name="trabalho2" id="trabalho2" placeholder="Nota do segundo trabalho" class="form-control" value="{{cadeira.trabalho2}}">
+                        </div>
+    
+                            <button type="submit" class="btn btn-dark col-4 offset-4 mt-3">Cadastrar</button>
+    
+                        </div>
+                   </div>
+            </form>
+        </div>
+    </div>
+</div>

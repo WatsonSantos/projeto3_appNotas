@@ -1,0 +1,75 @@
+<h2>Lista das notas</h2>
+<hr>
+<a href="/admin/cadeiras/add"><button class="btn btn-success mb-4"> Novo</button></a>
+
+
+    <div class="container">
+    <div class="row">
+
+<div class="col-12 ">
+
+<table class=" table table-hover table-striped table-bordered">
+        
+
+        <thead class="table-dark"> <!-- Table head -->
+
+            <tr> <!-- Table row-->
+                <th>Nome</th>  <!-- Table head-->
+                <th>1ª Avaliação</th>
+                <th>2ª Avaliação</th>
+                <th>1º Trabalho</th>
+                <th>2º Trabalho</th>
+                <th > Ação </th>
+            </tr>
+
+        </thead>
+
+    
+        <tbody> <!-- Table body -->
+            {{#each cadeiras}}
+            <tr> <!-- Table row-->
+                <td>{{nome}}</td> <!-- Table data-->
+                <td>{{teste1}}</td>
+                <td>{{teste2}}</td>
+                <td>{{trabalho1}}</td> <!-- Table data-->
+                <td>{{trabalho2}}</td> <!-- Table data-->
+                <td style="display: flex; flex-direction: row;"><a href="/admin/cadeiras/edit/{{_id}}" class="link-warmming"><button type="submit" class="btn btn-primary mt-2" style="margin-left: 50%;" >Editar</button>
+                </a>
+                <form action="/admin/cadeiras/deletar" method="post">
+                <input type="hidden" name="id" value="{{__id}}"></input>
+                <a class="link-danger"><button type="submit" class="btn btn-danger mt-2" style="margin-left: 60%;">Apagar</button></a>
+                </form>
+            </td>
+              {{else}}
+              <h4 class="mt-5">Nenhuma nota registrada</h4>
+              {{/each}}
+            </tr>
+        </tbody>
+    </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+        <!---
+        <div class="card-body">
+            <h4>{{nome}}</h4><br>
+            <small>Primaira avaliação:<p>{{teste1}}</p></small>
+            <small>Data de criação: {{date}}</small><br>
+            <a href="/admin/cadeiras/edit/{{_id}}"><button class="btn btn-success mt-4">Editar</button></a>
+            <form action="/admin/cadeiras/deletar" method="post">
+                <input type="hidden" name="id" value="{{__id}}"></input>
+                <button type="submit" class="btn btn-danger mt-2"> Eliminar</button>
+            </form>
+        </div>
+    
+    
+
+
+
+
