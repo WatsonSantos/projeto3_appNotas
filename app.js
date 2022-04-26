@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 const bodyParser = require('body-parser')
 const express = require('express')
 const handlebars = require('express-handlebars')

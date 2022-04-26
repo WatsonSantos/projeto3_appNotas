@@ -4,7 +4,9 @@
 
  function connectToDatabase(){ 
 
- mongoose.connect("mongodb+srv://Watson:watsonmongodb12345678@cluster0.qy24r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+ mongoose.connect(
+   process.env.DATABASE_URL,
+   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
